@@ -207,10 +207,10 @@ class SepsisGradingEngine:
         if trainee_response.get('documentation_status') != self.case_data.get('documentation_status'):
             improvements.append(f"Review documentation assessment: Expected {self.case_data.get('documentation_status')}")
         
-        if len(trainee_response.get('clinical_reasoning', '')) &lt; 50:
+        if len(trainee_response.get('clinical_reasoning', '')) < 50:
             improvements.append("Provide more detailed clinical reasoning")
         
-        if len(trainee_response.get('recommendations', '')) &lt; 30:
+        if len(trainee_response.get('recommendations', '')) < 30:
             improvements.append("Provide more specific CDI recommendations")
         
         if not improvements:
